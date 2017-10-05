@@ -1,0 +1,339 @@
+
+body {
+    width: 1280px;
+    height: 768px;
+    background-color: #7b7c7c;
+    font-size: 11px;
+}
+
+input, select, textarea {
+    outline: none;
+}
+
+input[type="text"], textarea {
+    background: #6d6c6c;
+    border: 1px solid #535353;
+    -webkit-box-shadow: inset 0 0 1px #303030;
+    -moz-box-shadow: inset 0 0 1px #303030;
+    box-shadow: inset 0 0 1px #303030;
+    color: #e9e9e9;
+    width: 100%;
+}
+
+input:read-only {
+    background-color: #ababab;
+    color: #777777;
+}
+
+
+input.wiz-button {
+    background: #9c9c9c;
+    border-radius: 2px;
+    border: 1px solid #616060;
+    -webkit-box-shadow: inset 0 0 1px #b9b8b8;
+    -moz-box-shadow: inset 0 0 1px #b9b8b8;
+    box-shadow: inset 0 0 1px #b9b8b8;
+    color: #e9e9e9;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#9c9c9c), to(#7b7c7c));
+    background: -moz-linear-gradient(100% 100% 90deg, #7b7c7c, #9c9c9c);
+    background: -ms-linear-gradient(top, #9c9c9c 0%,#7b7c7c 100%);
+    background: linear-gradient(top, #9c9c9c 0%,#7b7c7c 100%);
+}
+
+select {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #616060;
+    background: #9c9c9c;
+    -webkit-box-shadow: inset 0 0 1px #b9b8b8;
+    -moz-box-shadow: inset 0 0 1px #b9b8b8;
+    box-shadow: inset 0 0 1px #b9b8b8;
+    margin-bottom: 3px;
+    color: #e9e9e9;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#9c9c9c), to(#7b7c7c));
+    background: -moz-linear-gradient(100% 100% 90deg, #7b7c7c, #9c9c9c);
+    background: -ms-linear-gradient(top, #9c9c9c 0%,#7b7c7c 100%);
+    background: linear-gradient(top, #9c9c9c 0%,#7b7c7c 100%);
+
+}
+
+
+.jqx-grid-cell {
+    background: transparent;
+}
+
+.jqx-fill-state-pressed {
+    background: #686868;
+}
+
+.jqx-fill-state-hover {
+    background: #686868;
+}
+
+.jqx-grid {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-style: none;
+}
+
+.jqx-grid-cell {
+    border: 0;
+}
+
+.input-icon {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.jqx-listbox div.jqx-listitem-element:nth-child(odd) {
+    background: #9b9b9b;
+}
+
+.jqx-listbox div.jqx-listitem-element:nth-child(even) {
+    background: #909090;
+}
+
+.jqx-listbox .jqx-fill-state-pressed {
+    background: #ffbb00;
+    color: #293114;
+}
+
+.jqx-listitem-state-normal {
+    margin: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: 0;
+}
+
+/*wizard panel*/
+
+.wizard-panel input.button {
+    border: none;
+}
+
+/* 8*8 */
+.wizard-panel input.button.plus {
+    background: url(/xssd5/images/dashboard-wizard/btn/plus.png) no-repeat;
+    width: 8px;
+    height: 8px;
+    float: right;
+    margin: 6px 4px;
+    padding: 5px 4px;
+}
+
+/* 8*3 */
+.wizard-panel input.button.minus {
+    background: url(/xssd5/images/dashboard-wizard/btn/minus.png) no-repeat;
+    width: 8px;
+    height: 3px;
+    float: right;
+    margin: 9px 5px;
+    padding: 5px 5px;
+}
+
+/* 13*10 */
+.wizard-panel input.button.list {
+    background: url(/xssd5/images/dashboard-wizard/btn/list.png) no-repeat;
+    width: 13px;
+    height: 10px;
+    float: right;
+    margin: 6px 5px;
+    padding: 5px 5px;
+
+}
+
+/* 10*10 */
+.wizard-panel input.button.tile {
+    background: url(/xssd5/images/dashboard-wizard/btn/tile.png) no-repeat;
+    width: 10px;
+    height: 10px;
+    float: right;
+    margin: 6px 4px;
+    padding: 5px 4px;
+}
+
+.wizard-panel input.button.list.on {
+    background: url(/xssd5/images/dashboard-wizard/btn/list_on.png) no-repeat;
+}
+
+/* 10*10 */
+.wizard-panel input.button.tile.on {
+    background: url(/xssd5/images/dashboard-wizard/btn/tile_on.png) no-repeat;
+}
+
+/*grid*/
+.jqx-grid-column-header {
+    border: none;
+}
+
+.jqx-grid-header {
+    border-top: 2px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+    color: #ffffff;
+}
+
+.jqx-widget-header {
+    background: transparent;
+}
+
+.jqx-item {
+    color: #ffffff;
+}
+
+/* Datatable */
+.datatable-box {
+    padding: 5px 0 3px;
+    height: 100%;
+}
+
+/*Template List*/
+.template-search-box {
+    border-bottom: 1px solid #c1c1c1;
+    padding: 5px 4px 3px;
+    margin-bottom: 3px;
+}
+
+.template-list-box {
+    position: relative;
+    padding-bottom: 60px;
+    height: 100%;
+}
+
+.template-search-input {
+    background: #686868;
+    border: 1px solid #b7b7b7;
+    -webkit-box-shadow: inset 0 0 1px #000000;
+    -moz-box-shadow: inset 0 0 1px #000000;
+    box-shadow: inset 0 0 1px #000000;
+    color: #adadad;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 20px;
+}
+
+.template-icon {
+    position: absolute;
+    z-index: 2;
+    right: 5px;
+    top: 3px;
+    color: #adadad;
+}
+
+
+/* canvas */
+.editer-layer {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 0 solid #808080;
+    height: 100%;
+    padding: 5px;
+}
+
+.drop-zone {
+    background: #686868;
+    margin: 2px;
+    padding: 2px;
+    overflow: hidden;
+    width: 100%;
+    margin: 2px;
+    min-height: 50px;
+}
+
+.ui-component {
+    background: #7b7c7c;
+    position: relative;
+}
+
+.ui-component.over {
+    -webkit-box-shadow: 0 0 10px #000000 inset;
+    -moz-box-shadow: 0 0 10px #000000 inset;
+    box-shadow: 0 0 10px #000000 inset;
+}
+
+.ui-component.select {
+    -webkit-box-shadow: 0 0 10px #000000 inset;
+    -moz-box-shadow: 0 0 10px #000000 inset;
+    box-shadow: 0 0 10px #000000 inset;
+
+}
+
+.ui-component .control-button-group {
+    display: none;
+}
+
+.ui-component .control-button-group.show {
+    display: block;
+}
+
+.ui-component.wiz-container.wiz-panel {
+    background: #7b7c7c;
+}
+
+
+
+.wiz-component {
+    background: #ffffff;
+    min-height: 50px;
+}
+
+
+.ui-component input.button.remove {
+    background: url(/xssd5/images/dashboard-wizard/btn/close.png) no-repeat;
+    width: 22px;
+    height: 22px;
+
+}
+
+.ui-component input.button.add-row {
+    background: url(/xssd5/images/dashboard-wizard/btn/add_01.png) no-repeat;
+    width: 91px;
+    height: 26px;
+}
+
+.ui-component input.button.add-column {
+    background: url(/xssd5/images/dashboard-wizard/btn/add_02.png) no-repeat;
+    width: 101px;
+    height: 26px;
+}
+
+.canvas-main {
+    height: 100%;
+}
+
+.jqx-widget-content {
+    border-color: transparent;
+    background: transparent;
+}
+
+.jqx-fill-state-normal {
+    border-color: transparent;
+    background: transparent;
+}
+
+.jqx-window {
+    background: #7b7c7c;
+    border: 1px solid #616060;
+    -webkit-box-shadow: inset 0 0 1px #b9b8b8;
+    -moz-box-shadow: inset 0 0 1px #b9b8b8;
+    box-shadow: inset 0 0 1px #b9b8b8;
+}
+
+.jqx-window-header {
+    background: #909090;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#909090), to(#7b7c7c));
+    background: -moz-linear-gradient(100% 100% 90deg, #7b7c7c, #909090);
+    background: -ms-linear-gradient(top, #909090 0%,#7b7c7c 100%);
+    background: linear-gradient(top, #909090 0%,#7b7c7c 100%);
+    color: #d5d5d5;
+    font-weight: bold;
+}
+
+
+.jqx-window-close-button-background {
+    background: #d5d5d5;
+    border: 1px solid #7b7c7c;
+}

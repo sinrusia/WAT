@@ -1,0 +1,718 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: gojaehag
+  Date: 2017. 08. 01.
+  Time: 오후 3:27
+  To change this template use File | Settings | File Templates.
+--%>
+<html ng-app="dashboardWizardApp">
+<head>
+    <title>Dashboardd Wizard</title>
+
+    <link href="../plugin/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/style.css" rel="stylesheet">
+
+    <style>
+        .canvas {
+            padding: 5px;
+            height: 100%;
+        }
+
+        .canvas .canvas-filter {
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .canvas-main .wiz-layout {
+            padding: 5px;
+        }
+
+        .wiz-container {
+
+        }
+
+        .canvas-main .wiz-container {
+            position: relative;
+            border: 1px solid #686868;
+        }
+
+        .canvas-main .wiz-container.over {
+            /*
+            -webkit-box-shadow: inset 0 0 10px darkgray;
+            -moz-box-shadow: inset 0 0 10px darkgray;
+            box-shadow: inset 0 0 10px darkgray;
+            */
+        }
+
+        .canvas-main .wiz-container.select {
+            /*
+            -webkit-box-shadow: inset 0 0 10px darkgray;
+            -moz-box-shadow: inset 0 0 10px darkgray;
+            box-shadow: inset 0 0 10px darkgray;
+            */
+        }
+
+        .wiz-container .container-button-group {
+            display: none;
+        }
+
+        .wiz-container .container-button-group.show {
+            display: block;
+        }
+
+        .canvas .box .layout {
+            border: 1px dashed #828282;
+        }
+
+        .row {
+            margin-right: 0;
+            margin-left: 0;
+            min-height: 1px;
+        }
+
+        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .wizard-top {
+            height: 56px;
+        }
+
+        .wizard-main {
+            padding-bottom: 56px;
+            height: 100%;
+        }
+
+        .wizard-content {
+            height: 100%;
+            padding: 8px 5px;
+
+        }
+
+        .toolbar {
+            width: 100%;
+            height: 56px;
+            background-color: #616060;
+            text-align: center;
+        }
+
+        .toolbar input.button {
+            border: none;
+            vertical-align: bottom;
+            margin: 5px 10px 0;
+            outline: 0;
+        }
+
+        .toolbar input.button.new {
+            background: url(../images/dashboard-wizard/menu01.png) no-repeat;
+            width: 32px;
+            height: 45px;
+        }
+
+        .toolbar input.button.new:hover {
+            background: url(../images/dashboard-wizard/menu01_on.png) no-repeat;
+            width: 32px;
+            height: 45px;
+        }
+
+        .toolbar input.button.open {
+            background: url(../images/dashboard-wizard/menu02.png) no-repeat;
+            width: 30px;
+            height: 42px;
+        }
+
+        .toolbar input.button.open:hover {
+            background: url(../images/dashboard-wizard/menu02_on.png) no-repeat;
+            width: 30px;
+            height: 42px;
+        }
+
+        .toolbar input.button.save {
+            background: url(../images/dashboard-wizard/menu03.png) no-repeat;
+            width: 28px;
+            height: 43px;
+        }
+
+        .toolbar input.button.save:hover {
+            background: url(../images/dashboard-wizard/menu03_on.png) no-repeat;
+            width: 28px;
+            height: 43px;
+        }
+
+        .toolbar input.button.preview {
+            background: url(../images/dashboard-wizard/menu04.png) no-repeat;
+            width: 39px;
+            height: 46px;
+
+        }
+
+        .toolbar input.button.preview:hover {
+            background: url(../images/dashboard-wizard/menu04_on.png) no-repeat;
+            width: 39px;
+            height: 46px;
+        }
+
+        .panel-body {
+            -webkit-box-shadow: inset 0 0 10px #b9b8b8;
+            -moz-box-shadow: inset 0 0 10px #b9b8b8;
+            box-shadow: inset 0 0 10px #b9b8b8;
+        }
+
+        .wizard-panel {
+            border: 1px solid #616060;
+            height: 100%;
+        }
+
+        .wizard-panel-header {
+            height: 25px;
+            position: relative
+        }
+
+        .wizard-panel-header-bg {
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid rgba(185, 184, 184, 0.5);
+        }
+
+        .wizard-panel-header-bg-border {
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid #616060;
+            border-top: 1px solid rgba(185, 184, 184, 0.5);;
+            border-right: 1px solid rgba(185, 184, 184, 0.5);;
+        }
+
+        .wizard-panel-header-title {
+            position: absolute;
+            top: 1px;
+            height: 25px;
+            width: 100%;
+        }
+
+        .wizard-panel-header-title-label {
+            border-style: none solid none solid;
+            border-color: rgba(185, 184, 184, 0.5);;
+            border-width: 1px;
+            display: inline;
+            background: #909090;
+            padding: 4px 8px 8px 8px;
+            color: #d5d5d5;
+            font-weight: bold;
+            min-width: 100px;
+            font-size: 11px;
+            line-height: 1;
+            float: left;
+            min-width: 150px;
+        }
+
+        .wizard-panel-header-title-label .title_icon {
+            margin-right: 2px;
+        }
+
+        .wizard-panel-header-title-border {
+            display: inline;
+            border-left: 1px solid #616060;
+            border-top: 1px solid #616060;
+            padding-bottom: 7px;
+        }
+
+        .wizard-panel-body {
+            padding-bottom: 25px;
+            height: 100%;
+        }
+
+        .wizard-panel-body-main {
+            height: 100%;
+            border-style: none solid solid solid;
+            border-color: rgba(185, 184, 184, 0.5);
+            border-width: 1px;
+            background: #909090;
+        }
+
+        .dark-gray {
+            background: #7b7c7c;
+        }
+
+        /**
+         * wizard-tab-panel
+         */
+
+        .wizard-tab-panel {
+            height: 100%;
+        }
+
+        .wizard-tab-panel-header {
+            height: 25px;
+            position: absolute;;
+            top: 0;
+            width: 100%;
+        }
+
+        .wizard-tab-panel-header-bg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wizard-tab-panel-header-bg-border {
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid #616060;
+        }
+
+        .wizard-tab-panel-header-title {
+            border-style: solid solid none solid;
+            border-color: #616060;
+            border-width: 1px;
+            position: absolute;
+            top: 0;
+            height: 25px;
+        }
+
+        .wizard-tab-panel-header-title-label {
+            border-style: solid solid none solid;
+            border-color: #b9b8b8;
+            border-width: 1px;
+            background: #7b7c7c;
+            padding: 3px 8px 5px 8px;
+            font-size: 11px;
+            color: #ffffff;
+            font-weight: bold;
+            float: left;
+            min-width: 150px;
+        }
+
+        .wizard-tab-panel-header-title-label .title_icon {
+            margin-right: 2px;
+        }
+
+        .wizard-tab-panel-body {
+            margin-top: 24px;
+            padding-bottom: 24px;
+            height: 100%;
+        }
+
+        .wizard-tab-panel-body-border {
+            border: 1px solid #616060;
+            height: 100%;
+
+        }
+
+        .wizard-tab-panel-body-main {
+            height: 100%;
+            border: 1px solid rgba(185, 184, 184, 0.5);;
+            background: #7b7c7c;
+        }
+
+        .blue-title {
+            background: #019cc1;
+            border-style: solid solid none solid;
+            border-color: #03cbff;
+            border-width: 1px;
+        }
+
+
+    </style>
+
+    <script>
+        if (!Array.isArray) {
+            Array.isArray = function (obj) {
+                return Object.prototype.toString.call(obj) === "[object Array]";
+            }
+        }
+
+        if (typeof Object.getPrototypeOf != "function")(function () {
+
+            Object.getPrototypeOf =
+                    (typeof "".__proto__ == "object")
+                            ? function (object) {
+                        return getPrototypeValue(object, '__proto__');
+                    }
+                            : function (object) {
+                        return getPrototypeValue(object, 'constructor').prototype;
+                    }
+            ;
+
+            var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+            function getPrototypeValue(object, propertyName) {
+                try {
+                    if (hasOwnProperty.call(object, propertyName)) {
+                        var ownValue = object[propertyName];
+                        delete object[propertyName];
+                    }
+                    return object[propertyName];
+                }
+                catch (e) {
+                    throw e
+                }
+                finally {
+                    object[propertyName] = ownValue;
+                }
+            }
+
+        }());
+
+
+        if (!Object.create) {
+            Object.create = function (proto, props) {
+                if (typeof props !== "undefined") {
+                    throw "The multiple-argument version of Object.create is not provided by this browser and cannot be shimmed.";
+                }
+                function ctor() {
+                }
+
+                ctor.prototype = proto;
+                return new ctor();
+            };
+        }
+
+
+        if (!Object.keys) {
+            Object.keys = function (obj) {
+                var keys = [];
+
+                for (var i in obj) {
+                    if (obj.hasOwnProperty(i)) {
+                        keys.push(i);
+                    }
+                }
+
+                return keys;
+            };
+        }
+
+    </script>
+
+
+    <!-- jquery scripts -->
+    <script src="/xplugin/jquery/jquery-1.11.3.js"></script>
+    <!-- angularjs scripts -->
+    <script src="/xplugin/angular-1.4.7/angular.js"></script>
+    <script src="/xplugin/angular-1.4.7/angular-route.js"></script>
+
+    <script src="../plugin/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- bootbox -->
+    <script src="/xplugin/bootbox-4.4.0/bootbox.js"></script>
+
+    <!-- ssd script -->
+    <script src="/xssd5/script/ssd.js"></script>
+
+
+    <script src="/xssd5/script/dashboard-wizard/app.js"></script>
+    <script src="/xssd5/script/dashboard-wizard/directives.js"></script>
+    <script src="/xssd5/script/dashboard-wizard/wizBoard.js"></script>
+    <script src="/xssd5/script/dashboard-wizard/wizComponent.js"></script>
+    <script src="/xssd5/script/dashboard-wizard/wizProperties.js"></script>
+    <script src="/xssd5/script/dashboard-wizard/wizProperty.js"></script>
+
+    <script src="/xssd5/script/dashboard-wizard/service.js"></script>
+    <script src="/xssd5/script/service.js"></script>
+
+
+</head>
+
+<body ng-controller="appController" smb-id="xxxxxxxxx">
+
+
+<div class="wizard-top">
+    <div class="toolbar">
+
+        <input type="button" class="button new">
+        <input type="button" class="button open">
+        <input type="button" class="button save">
+        <input type="button" class="button preview">
+
+    </div>
+
+    <div id="jqxToolBar" style="height: 56px;">
+
+    </div>
+
+</div>
+
+<div class="wizard-main">
+    <div class="wizard-content">
+        <div id="mainSplitter">
+
+            <div>
+                <div id="firstNested">
+                    <div>
+                        <div id="secondNested">
+                            <div>
+
+                                <div class="wizard-tab-panel">
+
+                                    <div class="wizard-tab-panel-body">
+                                        <div class="wizard-tab-panel-body-border">
+                                            <div class="wizard-tab-panel-body-main">
+                                                <div style="height: 100%;">
+                                                    <div id="uiComponentTree">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="wizard-tab-panel-header" style="position: absolute; top: 0">
+                                        <div class="wizard-tab-panel-header-title">
+                                            <div class="wizard-tab-panel-header-title-label blue-title">
+                                        <span class="title_icon">
+                                            <img src="/xssd5/images/dashboard-wizard/icon/icon.png">
+                                        </span>
+                                                UI Navigator
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div class="wizard-panel">
+                                    <!--
+                                    <div style="width: 100%; height: 100%; position: absolute;
+                                    padding-right: 3px;padding-left: 1px;padding-bottom: 3px;">
+                                        <div class="panel-body" style="position:relative;width: 100%; height: 100%;">
+
+                                        </div>
+                                    </div>
+                                    -->
+                                    <div class="wizard-panel-header">
+
+                                        <div class="wizard-panel-header-bg">
+                                            <div class="wizard-panel-header-bg-border"></div>
+                                        </div>
+
+                                        <div class="wizard-panel-header-title">
+                                            <div class="wizard-panel-header-title-label">
+                                                <span class="title_icon">
+                                                    <img src="/xssd5/images/dashboard-wizard/icon/icon_01.png">
+                                                </span>
+                                                DataMap
+                                            </div>
+
+                                            <div class="wizard-panel-header-title-border"></div>
+
+                                            <input type="button" class="button minus" ng-click="delDataMap()">
+                                            <input type="button" class="button plus" ng-click="addDataMap()">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="wizard-panel-body">
+                                        <div class="wizard-panel-body-main">
+                                            <div class="datatable-box">
+                                                <div id="dataMapTable"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="wizard-panel">
+                            <!--
+                            <div style="width: 100%; height: 100%; position: absolute;
+                            padding-right: 3px;padding-left: 1px;padding-bottom: 3px;">
+                                <div class="panel-body" style="position:relative;width: 100%; height: 100%;">
+
+                                </div>
+                            </div>
+                            -->
+                            <div class="wizard-panel-header">
+
+                                <div class="wizard-panel-header-bg">
+                                    <div class="wizard-panel-header-bg-border"></div>
+                                </div>
+
+                                <div class="wizard-panel-header-title">
+                                    <div class="wizard-panel-header-title-label">
+                                        <span class="title_icon">
+                                            <img src="/xssd5/images/dashboard-wizard/icon/icon_01.png">
+                                        </span>
+                                        Template List
+                                    </div>
+
+                                    <div class="wizard-panel-header-title-border"></div>
+
+                                    <input type="button" class="button list on">
+                                    <input type="button" class="button tile">
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="wizard-panel-body">
+                                <div class="wizard-panel-body-main">
+                                    <div class="template-search-box">
+                                        <select>
+                                            <option>1</option>
+                                        </select>
+                                        <span class="input-icon">
+                                            <input type="text" placeholder="Search..."
+                                                   class="template-search-input">
+                                            <i class="fa fa-search template-icon"></i>
+                                        </span>
+                                    </div>
+                                    <div class="template-list-box">
+                                        <div id='jqxList'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div id="thirdNested" ng-controller="canvasCtrl">
+                    <div>
+                        <div class="wizard-panel">
+                            <!--
+                            <div style="width: 100%; height: 100%; position: absolute;
+                            padding-right: 3px;padding-left: 1px;padding-bottom: 3px;">
+                                <div class="panel-body" style="position:relative;width: 100%; height: 100%;">
+
+                                </div>
+                            </div>
+                            -->
+                            <div class="wizard-panel-header">
+
+                                <div class="wizard-panel-header-bg">
+                                    <div class="wizard-panel-header-bg-border"></div>
+                                </div>
+
+                                <div class="wizard-panel-header-title">
+                                    <div class="wizard-panel-header-title-label">
+                                        <span class="title_icon">
+                                            <img src="/xssd5/images/dashboard-wizard/icon/icon_01.png">
+                                        </span>
+                                        Canvas
+                                    </div>
+
+                                    <div class="wizard-panel-header-title-border"></div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="wizard-panel-body">
+                                <div class="wizard-panel-body-main">
+
+                                    <div id="canvas" class="canvas">
+
+                                        <div class="filter canvas-filter" ng-show="filterused">
+                                            <div class="ui-component editer-layer">
+
+                                            </div>
+                                        </div>
+
+                                        <div style="height: 100%; padding-bottom: 55px;">
+                                            <div id="canvasEditor" wiz-board="contents"
+                                                 class="ui-component wiz-container editer-layer"
+                                                 style="position: relative">
+                                                <div id="canvas-main" class="canvas-main">
+                                                </div>
+
+                                                <div class="control-button-group .hide"
+                                                     style="position: absolute; bottom: 0px; right: 0px;">
+                                                    <input type="button" ng-click="addRow()" class="button add-row">
+                                                    <input type="button" ng-click="addColumn()"
+                                                           class="button add-column">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="wizard-panel">
+                            <!--
+                            <div style="width: 100%; height: 100%; position: absolute;
+                            padding-right: 3px;padding-left: 1px;padding-bottom: 3px;">
+                                <div class="panel-body" style="position:relative;width: 100%; height: 100%;">
+
+                                </div>
+                            </div>
+                            -->
+                            <div class="wizard-panel-header">
+
+                                <div class="wizard-panel-header-bg">
+                                    <div class="wizard-panel-header-bg-border"></div>
+                                </div>
+
+                                <div class="wizard-panel-header-title">
+                                    <div class="wizard-panel-header-title-label">
+                                <span class="title_icon">
+                                    <img src="/xssd5/images/dashboard-wizard/icon/icon_01.png">
+                                </span>
+
+                                        Properties
+                                    </div>
+
+                                    <div class="wizard-panel-header-title-border"></div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="wizard-panel-body">
+                                <div class="wizard-panel-body-main">
+                                    <wiz-properties selected-component="selectedComponent"></wiz-properties>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+
+    /*
+    $('#mainSplitter').jqxSplitter({width: '100%', height: '100%', orientation: 'vertical', panels: [{size: 244}]});
+
+    $('#firstNested').jqxSplitter({
+        width: '100%',
+        height: '100%',
+        orientation: 'horizontal',
+        panels: [{size: 400, collapsible: false}]
+    });
+    $('#secondNested').jqxSplitter({width: '100%', height: '100%', orientation: 'horizontal', panels: [{size: 200}]});
+    $('#thirdNested').jqxSplitter({
+        width: '100%',
+        height: '100%',
+        orientation: 'vertical',
+        panels: [{size: 776, collapsible: false}]
+    });
+    */
+
+</script>
+
+
+</body>
+</html>

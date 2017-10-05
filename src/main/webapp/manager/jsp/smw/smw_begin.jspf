@@ -1,0 +1,15 @@
+<%@ page contentType="text/html; charset=utf-8" %>
+<%@ include file="/xefc/jsp/common/import.jspf" %>
+<%
+    Box box = HttpUtility.getBox(request);
+    RecordSet rs = (RecordSet) request.getAttribute("rs");
+    if (box == null) return;
+    if (rs == null) return;
+    String id = rs.get("wit_id");
+    String dam_id = rs.get("wit_dam_id");
+    String option = rs.get("wit_config");
+    String pane = rs.get("wit_pane");
+    String height = rs.get("wit_height");
+
+    if (!StringUtil.valid(option)) option = "{}";
+%>

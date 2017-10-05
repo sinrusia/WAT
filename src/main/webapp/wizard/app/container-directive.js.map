@@ -1,0 +1,1 @@
+{"version":3,"file":"container-directive.js","sourceRoot":"","sources":["container-directive.ts"],"names":[],"mappings":";;;;;;;;;;AACA,sCAA0D;AAM1D,IAAa,kBAAkB;IAC3B,4BAAmB,gBAAiC;QAAjC,qBAAgB,GAAhB,gBAAgB,CAAiB;IAAE,CAAC;IAC3D,yBAAC;AAAD,CAAC,AAFD,IAEC;AAFY,kBAAkB;IAJ9B,gBAAS,CAAC;QACP,QAAQ,EAAE,aAAa;KAC1B,CAAC;qCAGsC,uBAAgB;GAD3C,kBAAkB,CAE9B;AAFY,gDAAkB"}

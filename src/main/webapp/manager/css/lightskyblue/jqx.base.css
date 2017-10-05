@@ -1,0 +1,49 @@
+﻿/**
+jqWidget 관련 스타일 정의
+*/
+
+
+
+.datatable {
+    font-size: 14px;
+    color: #4e4e4e;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 120%;
+    border-color: #cfcfcf;
+}
+
+.jqx-widget .jqx-grid-cell, .jqx-widget .jqx-grid-column-header, .jqx-widget .jqx-grid-group-cell {
+    border-color: #cfcfcf;
+}
+
+.jqx-widget-header {
+    background: #B0B0B0;
+}
+
+.jqx-grid-column-header {
+    font-weight: bold;
+}
+
+td.jqx-cell.jqx-grid-cell.jqx-item.jqx-center-align {
+    border-color: #cfcfcf;
+}
+
+.jqx-grid-table {
+    font-size: 14px;
+    color: #4e4e4e;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 120%;
+}
+
+.jqx-rc-all {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+
+.jqx-cell {
+    padding: 5px 4px;
+}

@@ -1,0 +1,506 @@
+/*Hanna
+    font-family: 'Hanna', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+/*
+Jeju Gothic
+font-family: 'Jeju Gothic', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+/*
+Jeju Hallasan
+font-family: 'Jeju Hallasan', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+
+/*
+Jeju Myeongjo
+font-family: 'Jeju Myeongjo', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
+/*
+KoPub Batang
+font-family: 'KoPub Batang', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+
+/*
+Nanum Brush Script
+font-family: 'Nanum Brush Script', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+
+/*
+Nanum Gothic
+font-family: 'Nanum Gothic', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/*
+Nanum Gothic Coding
+font-family: 'Nanum Gothic Coding', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+/*
+Nanum Myeongjo
+font-family: 'Nanum Myeongjo', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+/*
+Nanum Pen Script
+font-family: 'Nanum Pen Script', serif;
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+/*
+Dashboard Prototype-05 Default Stylesheet
+*/
+
+body {
+    font-family: "맑은 고딕", "Malgun Gothic", "돋움", dotum, sans-serif;
+}
+
+.infobox-container {
+    text-align: left;
+}
+
+.infobox-yellow {
+    color: #fee188;
+    border-color: #fee188;
+}
+
+.infobox-yellow > .infobox-icon > .ace-icon {
+    background-color: #fee188;
+}
+
+.infobox-yellow.infobox-dark {
+    background-color: #fee188;
+    border-color: #fee188;
+}
+
+.fa-s:before {
+    content: 'S';
+}
+
+.fa-a:before {
+    content: 'A';
+}
+
+.fa-b:before {
+    content: 'B';
+}
+
+.fa-c:before {
+    content: 'C';
+}
+
+.fa-d:before {
+    content: 'D';
+}
+
+.infobox-s > .infobox-icon > .ace-icon {
+    background-color: #3a87ad;
+}
+
+.infobox-a > .infobox-icon > .ace-icon {
+    background-color: #82af6f;
+}
+
+.infobox-b > .infobox-icon > .ace-icon {
+    background-color: #fee188;
+}
+
+.infobox-c > .infobox-icon > .ace-icon {
+    background-color: #f89406;
+}
+
+.infobox-d > .infobox-icon > .ace-icon {
+    background-color: #d15b47;
+}
+
+.xe-label {
+    padding: 10px;
+}
+
+.xe-icon {
+    padding: 10px;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #000000;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #000000;
+}
+
+.gold {
+    color: #EDDEBD !important;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #222222;
+    border: 1px solid #666666;
+    border-radius: 4px;
+}
+
+
+.panel-heading {
+    padding: 1px 15px;
+    border-bottom: 1px solid #626262;
+    background-image: -webkit-linear-gradient(top, #373737 0%, #191919 100%);
+    background-image: -o-linear-gradient(top, #373737 0%, #191919 100%);
+    background-image: linear-gradient(to bottom, #373737 0%, #191919 100%);
+}
+
+.panel-title {
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+.navbar-wrapper {
+    padding-bottom: 18px;
+}
+
+.infobox-bg {
+    background-color: rgba(75,75,75, 0.3);
+}
+
+.yellow-num {
+    color: #FFFF13;
+}
+
+.dark-blue {
+    color: #162A30;
+}
+
+
+
+.level-icon {
+    display: inline-block;
+    height: 42px;
+    margin: 0;
+    padding: 1px 1px 0 2px;
+    background-color: transparent;
+    border-width: 0;
+    text-align: center;
+    position: relative;
+    border-radius: 100%;
+    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.level-icon:before {
+    font-size: 24px;
+    display: block;
+    padding: 6px 0 7px;
+    width: 40px;
+    text-align: center;
+    border-radius: 100%;
+    color: #FFF;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.14);
+}
+
+.fa-s:before {
+    content: 'S';
+}
+
+
+
+.tile-box {
+    line-height: inherit;
+    display: block;
+    position: relative;
+    height: auto;
+    padding: 0;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid
+}
+
+.tile-header {
+    font-size: 12px;
+    padding: 5px 10px;
+    text-align: left;
+    text-transform: uppercase;
+    border: 0 !important;
+    background: rgba(255, 255, 255, .2)
+}
+
+.tile-header .float-right {
+    opacity: .6;
+    -moz-opacity: .6;
+    filter: alpha(opacity:60)
+}
+
+.tile-content-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 10px
+}
+
+.tile-content {
+    font-size: 35px;
+    text-align: right
+}
+
+.tile-content span {
+    font-size: 25px;
+    opacity: .7;
+    -moz-opacity: .7;
+    filter: alpha(opacity:70)
+}
+
+.tile-content-wrapper small {
+    font-size: 14px;
+    display: block;
+    text-align: right;
+    opacity: .7;
+    -moz-opacity: .7;
+    filter: alpha(opacity:70)
+}
+
+.tile-content-wrapper > .glyph-icon {
+    font-size: 35px;
+    line-height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    height: 70px;
+    margin-top: -36px;
+    opacity: .3;
+    -moz-opacity: .3;
+    filter: alpha(opacity:30)
+}
+
+.tile-footer {
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    text-align: left;
+    color: inherit;
+    background: rgba(0, 0, 0, .1)
+}
+
+.bg-white .tile-footer {
+    border-top-style: solid;
+    border-top-width: 1px
+}
+
+.tile-footer:hover {
+    opacity: .8;
+    color: inherit;
+    -moz-opacity: .8;
+    filter: alpha(opacity:80)
+}
+
+.tile-footer .glyph-icon {
+    float: right
+}
+
+.tile-box-alt .tile-header {
+    padding: 10px;
+    text-align: center
+}
+
+.tile-box-alt .tile-content-wrapper > .glyph-icon {
+    font-size: 65px;
+    margin-top: -32px
+}
+
+.tile-box-shortcut:hover .tile-content-wrapper > .glyph-icon, a.tile-box.btn .tile-content-wrapper > .glyph-icon, a.tile-box.btn .tile-header .float-right {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out
+}
+
+a.tile-box.btn:hover .tile-content-wrapper > .glyph-icon {
+    opacity: .7;
+    -moz-opacity: .7;
+    filter: alpha(opacity:70)
+}
+
+a.tile-box.btn:hover .tile-header .float-right {
+    opacity: .9;
+    -moz-opacity: .9;
+    filter: alpha(opacity:90)
+}
+
+.tile-content-wrapper .easyPieChart {
+    margin-top: -5px;
+    margin-bottom: -5px;
+    font-size: 19px;
+    font-weight: 300
+}
+
+.tile-box-shortcut .tile-header {
+    background: 0 0;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    font-size: 13px;
+    font-weight: 400
+}
+
+.tile-box-shortcut .bs-badge {
+    left: auto;
+    right: 10px;
+    top: 10px;
+    background: rgba(0, 0, 0, .5)
+}
+
+.tile-box-shortcut .tile-content-wrapper {
+    padding: 0;
+    min-height: 80px
+}
+
+.tile-box-shortcut .tile-content-wrapper > .glyph-icon {
+    position: absolute;
+    left: 15px;
+    top: 30px
+}
+
+.tile-box-shortcut:hover .tile-content-wrapper > .glyph-icon {
+    opacity: .8;
+    -moz-opacity: .8;
+    filter: alpha(opacity:80)
+}
+
+.white {
+    fill: #ffffff
+}
+
+/*jqxGauge Style*/
+.jqx-gauge-label
+{
+    fill: #FFFFFF;
+}
+
+/*jqxChart legend Style*/
+.jqx-chart-legend-text
+{
+    fill: #ffffff;
+}
+
+.page-header {
+    padding-bottom: 1px;
+    min-height: 48px;
+}
+
+.page-title {
+    display: inline;
+    width: 100px;
+}
+
+.filter {
+    display: inline;
+    float: right;
+}
+
+.filter-ctrl {
+    display: inline;
+    float: right;
+    padding: 0 10px;
+}
+
+.smwc01 {
+    width: 100%;
+    table-layout: fixed;
+    font-family: malgun gothic, '돋움';
+}
+
+.smwc01 .type {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+
+}
+
+.smwc01 .val1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #E2E37D;
+    text-align: right;
+}
+
+.smwc01 .val2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #33CC00;
+    text-align: right;
+}
+
+.smwc01 .val3 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00ffff;
+    text-align: right;
+}
+
+.smwc01 .epie {
+    text-align: center;
+
+}
+
+.smwc01 .mons {
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.smwc01 .sparkline {
+    margin-top: 10px;
+}
+
+.smwc01 .st {
+    font-size: 12px;
+    font-weight: normal;
+    color: #ffffff;
+
+}
+
+.smwc01 .stc {
+    font-size: 12px;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.chart {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.chart canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.percent {
+    display: inline-block;
+    line-height: 50px;
+    z-index: 2;
+}
+.percent:after {
+    content: '%';
+    margin-left: 0.1em;
+    font-size: .8em;
+}

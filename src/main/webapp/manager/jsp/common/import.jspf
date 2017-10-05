@@ -1,0 +1,9 @@
+<%@ page contentType="text/html; charset=utf-8"%><%@ page
+	import="org.sdf.servlet.*,org.sdf.rdb.*,org.sdf.util.*,org.sdf.log.*,org.sdf.lang.*,org.json.simple.*,org.sdf.slim.*"
+	import="java.util.*,java.sql.*,java.io.*" import="com.steg.efc.*,com.steg.ui.*,com.steg.ssd.*"
+	import=" com.sap.conn.jco.*, com.sap.conn.jco.ext.*" 
+	%><%
+	response.setHeader("Pragma", "No-cache");
+	response.setHeader("Cache-Control", "no-cache,no-store,max-age=0");
+	response.setDateHeader("Expires", 1);
+%>		

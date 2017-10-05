@@ -1,0 +1,65 @@
+<%@ page contentType="text/html; charset=utf-8"  %>
+<%!
+/*
+	String[][] apis = {
+		{"SQL", "BQ", "RF", "CF"},
+		{"[DB] SQL", "[SAP] Bex Query", "[SAP] Remote Fnc.", "[SAP] Common Fnc."}
+	};
+	
+	String[][] ptypes = {
+		{"", "TAB"},
+		{"General", "TAB"}
+	};
+	
+		
+	String[][] types = {
+		{	"SGRID", "SCHART", "SCHART_WF", "SCHART_STACK", "SCHART_PIE", "SARROW"},
+		{	"Grid", "Bar/Line Chart", "Waterfall", "Stack Chart", "Pie Chart", "Arrow Chart"},
+		{	"grid", "bar", "wf", "stack", "pie", "arrow"}
+	};
+*/
+
+	String getSelect(String name, String v, String[] vals, String[] texts){
+		return getSelect(name, v, vals, texts, null, null);
+	}
+	
+	String getSelect(String name, String v, String[] vals, String[] texts, String a_v, String a_t){
+		return getSelect(name, v, vals, texts, a_v, a_t, null, null);
+	}
+	
+	String getSelect(String name, String v, String[] vals, String[] texts, String a_v, String a_t, String handler, String style){
+	  if( v == null) v = "";
+		StringBuffer buf = new StringBuffer();
+		buf.append( "<select name="+ name);
+		if(StringUtil.valid(handler)) buf.append( " onchange=\""+ handler +"\"");
+		if(StringUtil.valid(handler)) buf.append( " style=\""+ style +"\"");
+		buf.append( ">");
+		if(a_v != null){
+			String checked = "";
+			if(a_v.equals(v)) checked = "selected";
+			buf.append("<option value='"+ a_v+"' "+checked+">" + a_t +"</option>");
+		}
+		for(int i=0; i<vals.length; i++){
+			String checked = "";
+			if( v.equals(vals[i])) checked = "selected";
+			buf.append("<option value='"+vals[i]+"' "+checked+">" + texts[i] +"</option>");
+		}
+		buf.append("</select>");
+		return buf.toString();
+	}
+	
+	String getNumSelect(String name, int v, int start, int end){
+		StringBuffer buf = new StringBuffer();
+		buf.append( "<select name="+ name + ">");
+		for(int i=start; i<=end; i++){
+			String checked = "";
+			if(i == v) checked = "selected";
+			buf.append("<option value='"+i+"' "+checked+">" + i +"</option>");
+		}
+		buf.append("</select>");
+		return buf.toString();
+	}
+	
+
+
+%>

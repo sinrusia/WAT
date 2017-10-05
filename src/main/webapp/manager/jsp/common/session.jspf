@@ -1,0 +1,36 @@
+<%@ page contentType="text/html; charset=utf-8"%><% 
+{
+	User _user = (User) session.getAttribute("egene.user");
+	GlobalConfig gc = GlobalConfig.getInstance();
+	String webtitle = gc.getWebTitle();
+	String referer = request.getHeader("referer"); 
+	if(referer != null){
+		
+		boolean bReferer = referer.startsWith("http://" + request.getServerName());
+		bReferer = bReferer || referer.startsWith("https://" + request.getServerName());
+		if(!bReferer){
+			session.invalidate();
+%>
+		<script language=javascript>
+			alert("정상적인 접근이 아닙니다.");
+		    top.document.location = "/";
+		</script>
+<%			return;
+		}
+	}
+	if(_user == null ){
+		String url = "/xssd/jsp/login/login.jsp";
+		
+		Texts texts_session = Texts.getInstance();
+		session.invalidate();
+%>
+		<script language=javascript>
+			alert("<%= texts_session.getLocaleText("msg.SessionTimeout") %>");
+      		//alert("세션이 끊어졌습니다.다시 로그인하기 바랍니다.");
+		    top.document.location = "<%= org.sdf.servlet.HttpUtility.translate(url) %>";
+		</script>
+<%		
+		return;		
+	}	
+	}
+%>		

@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="wat:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/wat_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="wat/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="wat" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="aws" />
+          <element id="library" level="project" name="org.springframework:spring-context:4.3.9.RELEASE" />
+          <element id="library" level="project" name="org.springframework:spring-web:4.3.9.RELEASE" />
+          <element id="library" level="project" name="org.springframework.security:spring-security-web:4.2.3.RELEASE" />
+          <element id="library" level="project" name="org.springframework:spring-jdbc:4.3.9.RELEASE" />
+          <element id="library" level="project" name="org.springframework:spring-tx:4.3.9.RELEASE" />
+          <element id="library" level="project" name="org.springframework:spring-webmvc:4.3.9.RELEASE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
